@@ -13,7 +13,7 @@ Object.defineProperty(global.self, 'crypto', {
             (crypto as CryptoPlus).randomBytes(arr),
     },
 });
-(global.crypto as CryptoPlus).subtle = {} as SubtleCrypto; // this gets around the 'auth0-spa-js must run on a secure origin' error
+(global.crypto as CryptoPlus).subtle = {} as SubtleCrypto;
 
 describe('Given App component', () => {
     describe('When we render the component', () => {
@@ -25,7 +25,7 @@ describe('Given App component', () => {
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('app', 'i');
+            const title = new RegExp(/app/i);
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });

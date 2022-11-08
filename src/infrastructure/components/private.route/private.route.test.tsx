@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter as Router } from 'react-router-dom';
+import { Navigate, MemoryRouter as Router } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { PrivateRoute } from './private.route';
-import { Navigate } from 'react-router-dom';
 
 jest.mock('@auth0/auth0-react');
 jest.mock('react-router-dom', () => ({
@@ -25,7 +24,7 @@ describe('Given PrivateRoute component', () => {
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('PrivateRoute', 'i');
+            const title = new RegExp(/PrivateRoute/i);
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });
@@ -45,7 +44,7 @@ describe('Given PrivateRoute component', () => {
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('PrivateRoute', 'i');
+            const title = new RegExp(/PrivateRoute/i);
             const element = screen.queryByText(title);
             expect(element).toBe(null);
             expect(Navigate).toHaveBeenCalled();
