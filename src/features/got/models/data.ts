@@ -1,4 +1,6 @@
-export const data = [
+import { Character } from './character';
+
+export const data: Array<Character> = [
     {
         name: 'Joffrey',
         family: 'Baratheon',
