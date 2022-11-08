@@ -2,14 +2,13 @@ export type ProtoCharacter = {
     name: string;
     family: string;
     age: number;
-    state: boolean;
 };
 
 export type Character = {
     name: string;
     family: string;
     age: number;
-    state: boolean;
+    state: false;
 };
 
 export class CharacterModel {
