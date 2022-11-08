@@ -23,11 +23,32 @@ export function Sample() {
 
     return (
         <>
+            <form>
+                <h2>Añade tu personaje</h2>
+                <div>
+                    Name:
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div>
+                    Family:
+                    <input type="text" name="family" id="family" />
+                </div>
+                <div>
+                    Age: <input type="text" name="age" id="age" />
+                </div>
+                <div>
+                    <input type="submit" value="Enviar" />
+                </div>
+            </form>
+            <h2>All Characters</h2>
             {characters.map((item) => (
                 <>
-                    <p>Name: {item.name}</p>
-                    <p>Family: {item.family}</p>
-                    <p>Age: {item.age}</p>
+                    <div className="card">
+                        <p>Name: {item.name}</p>
+                        <p>Family: {item.family}</p>
+                        <p>Age: {item.age}</p>
+                        <p>✖️</p>
+                    </div>
                 </>
             ))}
         </>
