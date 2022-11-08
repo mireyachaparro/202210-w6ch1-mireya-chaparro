@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { rootState } from '../../../../infrastructure/store/store';
 import * as ac from '../../reducer/action.creators';
-import style from './sample.module.css';
+import style from './character.list.module.css';
 import { data } from '../../models/data';
 
-export function Sample() {
+export function CharacterList() {
     const characters = useSelector((state: rootState) => state.characters);
 
     const dispatcher = useDispatch();
@@ -37,7 +37,7 @@ export function Sample() {
             <div className={style.cards}>
                 {characters.map((item) => (
                     <>
-                        <div className={style.card}>
+                        <div className={style.card} key={item.name}>
                             <p>Name: {item.name}</p>
                             <p>Family: {item.family}</p>
                             <p>Age: {item.age}</p>
