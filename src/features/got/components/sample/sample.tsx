@@ -4,7 +4,7 @@ import { rootState } from '../../../../infrastructure/store/store';
 import * as ac from '../../reducer/action.creators';
 
 export function Sample() {
-    const tasks = useSelector((state: rootState) => state.tasks); //l aparte del estado que queremos, qué rama queremos del store
+    const characters = useSelector((state: rootState) => state.characters);
 
     const dispatcher = useDispatch();
 
@@ -12,10 +12,10 @@ export function Sample() {
         dispatcher(
             ac.loadActionCreate([
                 {
-                    id: 1,
-                    title: 'terminar redux',
-                    responsible: 'pepe',
-                    isComplete: false,
+                    name: 'pepe',
+                    family: 'lopez',
+                    age: 40,
+                    state: false,
                 },
             ])
         );
@@ -23,10 +23,11 @@ export function Sample() {
 
     return (
         <>
-            {tasks.map((item) => (
+            {characters.map((item) => (
                 <>
-                    <p>Task: {item.title}</p>
-                    <p>Responsible: {item.responsible}</p>
+                    <p>Name: {item.name}</p>
+                    <p>Family: {item.family}</p>
+                    <p>Age: {item.age}</p>
                 </>
             ))}
         </>
