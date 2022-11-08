@@ -1,10 +1,10 @@
-import { Sample } from '../../got/components/sample/sample';
+import { CharacterList } from '../../got/components/characterlist/character.list';
 
 function HomePage() {
     return (
         <main>
             <h2>GOT</h2>
-            <Sample></Sample>
+            <CharacterList></CharacterList>
         </main>
     );
 }
